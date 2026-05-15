@@ -268,3 +268,170 @@ nav {
         padding: 40px 20px 60px;
     }
 }
+.card_image{
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+/* ============================================
+   ITEMS PANEL  (injected by JS below the grid)
+============================================ */
+#panel-container {
+    /* collapsed state */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-12px);
+    transition:
+        max-height 380ms ease,
+        opacity    300ms ease,
+        transform  300ms ease;
+    margin-top: 0;
+}
+
+#panel-container.visible {
+    max-height: 600px;   /* large enough for any category list */
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 32px;
+}
+
+/* The inner panel card */
+.items-panel {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-top: 3px solid var(--panel-accent, #6F4E37);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.panel-inner {
+    padding: 32px 36px 36px;
+}
+
+/* Panel header row */
+.panel-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.panel-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.panel-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    flex: 1;
+}
+
+.panel-close {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 200ms ease, color 200ms ease;
+    flex-shrink: 0;
+}
+
+.panel-close:hover {
+    background: rgba(255,255,255,0.16);
+    color: var(--white);
+}
+
+/* Item rows inside the panel */
+.items-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.item-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: background 200ms ease;
+}
+
+.item-row:last-child {
+    border-bottom: none;
+}
+
+.item-row:hover {
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.item-name {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    white-space: nowrap;
+}
+
+.item-dots {
+    flex: 1;
+    border-bottom: 1px dotted rgba(255,255,255,0.15);
+    margin-bottom: 3px;
+    min-width: 20px;
+}
+
+.item-price {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--panel-accent, #6F4E37);
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   FOOTER
+============================================ */
+.menu-footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 2px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ============================================
+   RESPONSIVE — stack to 1 col on mobile
+============================================ */
+@media (max-width: 680px) {
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-hero-text {
+        padding: 40px 24px 10px;
+    }
+
+    .menu-main {
+        padding: 40px 20px 60px;
+    }
+
+    .panel-inner {
+        padding: 24px 20px 28px;
+    }
+
+    #panel-container.visible {
+        max-height: 800px;
+    }
+}
