@@ -1,0 +1,276 @@
+/* =============================================
+   ETHIOBUNA — menu page styles
+   Matches landing page: dark overlays, #6F4E37 brown,
+   green / yellow / red flag accents, sans-serif
+============================================= */
+
+/* ---------- reset (same as landing) ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- shared tokens ---------- */
+:root {
+    --brown:      #6F4E37;
+    --brown-dark: #4b2d18;
+    --green:      #2e7d32;
+    --yellow:     #f9a825;
+    --red:        #c62828;
+    --white:      #ffffff;
+    --bg-dark:    #1a1008;
+    --card-bg:    rgba(255,255,255,0.04);
+    --card-border:rgba(255,255,255,0.10);
+}
+
+body {
+    background-color: var(--bg-dark);
+    font-family: sans-serif;
+    color: var(--white);
+    min-height: 100vh;
+}
+
+/* ============================================
+   HEADER / NAV  — mirrors landing page
+============================================ */
+.menu-header {
+    width: 100%;
+    background-image:
+        linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.50)),
+        url(../img/coffee1.png);
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 60px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo {
+    width: 52px;
+    height: 54px;
+    background: transparent;
+}
+
+.brand {
+    color: var(--white);
+    padding: 0 0 0 1rem;
+    font-size: 20px;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links li {
+    list-style: none;
+    display: inline-block;
+    padding: 2%;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 50px;
+    transition: all 1000ms;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    font-size: 16px;
+    background: var(--brown);
+    border-radius: 50px;
+}
+
+/* ---------- hero text ---------- */
+.menu-hero-text {
+    padding: 60px 50px 10px;
+}
+
+.menu-sub {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 8px;
+}
+
+.menu-title {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 2px;
+}
+
+.menu-tagline {
+    margin-top: 12px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.60);
+    font-style: italic;
+}
+
+.green { color: #4caf50; }
+.yellow { color: #ffeb3b; }
+.red    { color: #f44336; }
+
+/* ============================================
+   MAIN SECTION
+============================================ */
+.menu-main {
+    padding: 60px 40px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.grid-intro {
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 40px;
+}
+
+/* ============================================
+   2 × 2 CATEGORY GRID
+============================================ */
+.category-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+/* ---------- individual card ---------- */
+.category-card {
+    position: relative;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 36px 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,255,255,0.25);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* coloured corner accent bar */
+.card-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    border-radius: 20px 0 0 20px;
+}
+.accent-brown  { background: var(--brown); }
+.accent-yellow { background: var(--yellow); }
+.accent-green  { background: var(--green); }
+.accent-red    { background: var(--red); }
+
+/* icon */
+.card-icon {
+    font-size: 2.4rem;
+    line-height: 1;
+}
+
+/* title & description */
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.card-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.50);
+    font-style: italic;
+}
+
+/* preview list */
+.card-preview {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.card-preview li {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    padding-left: 14px;
+    position: relative;
+}
+
+.card-preview li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: rgba(255,255,255,0.30);
+}
+
+/* VIEW MENU button */
+.card-btn {
+    align-self: flex-start;
+    margin-top: auto;
+    background: var(--brown);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background 300ms ease, transform 200ms ease;
+}
+
+.card-btn:hover {
+    background: var(--brown-dark);
+    transform: scale(1.03);
+}
+
+/* ============================================
+   FOOTER
+============================================ */
+.menu-footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 2px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ============================================
+   RESPONSIVE — stack to 1 col on mobile
+============================================ */
+@media (max-width: 680px) {
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-hero-text {
+        padding: 40px 24px 10px;
+    }
+
+    .menu-main {
+        padding: 40px 20px 60px;
+    }
+}
