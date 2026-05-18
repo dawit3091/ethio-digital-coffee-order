@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --theme: "cream"; /* ← change to "dark" if you go dark on menu */
+
+    --brown:       #a0522d;
+    --brown-dark:  #7a3b1e;
+
+    /* CREAM values */
+    --bg:          #f5ede4;
+    --card-bg:     #ede0d4;
+    --card-border: #d9c5b2;
+    --text:        #1a0e08;
+    --text-muted:  rgba(26,14,8,0.55);
+    --text-faint:  rgba(26,14,8,0.40);
+    --input-bg:    #fff8f2;
+    --input-border:#d9c5b2;
+    --input-focus: #a0522d;
+    --hero-overlay:rgba(245,237,228,0.88);
+    --hero-overlay2:rgba(245,237,228,0.60);
+}
+
+
+
+
+body {
+    background-color: var(--bg);
+    font-family: 'Lato', sans-serif;
+    color: var(--text);
+    min-height: 100vh;
+}
+
+
+
+.contact-header {
+    width: 100%;
+    background: none;
+    position: absolute;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    width: 52px;
+    height: 54px;
+}
+
+.brand {
+    color: #f5ede4;
+    padding: 0 0 0 1rem;
+    font-size: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links li {
+    list-style: none;
+    display: inline-block;
+    padding: 2%;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #f5ede4;
+    font-size: 15px;
+    padding: 5px 10px;
+    border-radius: 50px;
+    transition: all 300ms;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    background: var(--brown);
+    color: #fff8f2;
+}
+
+
+.contact-hero {
+    background:
+        linear-gradient(rgba(30,15,5,0.85), rgba(30,15,5,0.40)),
+        url(../img/coffee1.png);
+    background-size: cover;
+    background-position: center;
+    padding: 100px 60px 60px;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: var(--brown);
+    font-weight: 700;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--bg);
+    margin-bottom: 14px;
+}
+
+.hero-tagline {
+    font-size: 15px;
+    color: var(--bg);
+    font-style: italic;
+}
+
+
+.contact-main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+}
+
+.form-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 44px 40px;
+}
+
+.form-intro {
+    margin-bottom: 32px;
+}
+
+.form-intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+.form-intro p {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    color: var(--text);
+    outline: none;
+    transition: border-color 250ms ease, box-shadow 250ms ease;
+    resize: none;
+    appearance: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-faint);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px rgba(160,82,45,0.12);
+}
+
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--brown);
+    color: #fff8f2;
+    border: none;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 300ms ease, transform 200ms ease, opacity 200ms ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+    background: var(--brown-dark);
+    transform: scale(1.02);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.form-note {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #2e7d32;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.contact-footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: var(--text-faint);
+    letter-spacing: 2px;
+    border-top: 1px solid var(--card-border);
+}
+
+
+@media (max-width: 680px) {
+    .contact-hero {
+        padding: 50px 24px 50px;
+    }
+
+    .contact-main {
+        padding: 40px 20px 60px;
+    }
+
+    .form-card {
+        padding: 30px 22px;
+    }
+}
+.green{
+    color: green;
+}
+.yellow{
+    color: yellow;
+}
+.red{
+    color: red;
+}

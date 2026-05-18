@@ -17,10 +17,10 @@
             <h2 class="brand">ETHIOBUNA</h2>
             <ul class="nav-links">
                 <li><a href="coffee.html">HOME</a></li>
-                <li><a href="#">ABOUT</a></li>
+                <li><a href="about.html">ABOUT</a></li>
                 <li><a href="menu.html" class="active">MENU</a></li>
-                <li><a href="#">CONTACT</a></li>
-                <li><a href="#">BLOG</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                
             </ul>
         </nav>
 
@@ -119,6 +119,22 @@
     <footer class="menu-footer">
         <p>© 2026 ETHIOBUNA · All rights reserved</p>
     </footer>
+     <!-- ↓ Floating cart button -->
+    <button id="cart-fab" aria-label="View Order">
+      ☕
+      <span id="cart-badge" style="display:none">0</span>
+    </button>
+
+    <!-- ↓ Cart modal -->
+    <div id="cart-modal-overlay"></div>
+    <div id="cart-modal">
+      <div class="cart-modal-header">
+        <h3>Your Order</h3>
+        <button id="cart-modal-close">&times;</button>
+      </div>
+      <div id="cart-modal-body"></div>
+      <div id="cart-modal-footer"></div>
+    </div>
 <script src="menu2.js"></script>
 </body>
 </html>
